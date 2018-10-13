@@ -7,18 +7,24 @@ var game = {
         'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
     ],
     words: [
-        "sperel",
-        "superman",
-        "comic",
-        "pajamas",
-        "hat",
-        "lamp",
-        "laptop",
-        "desktop",
-        "gundam",
-        "bald eagle",
-        "worm",
-        "keyboard"
+        "joker",
+        "arsene",
+        "morgana",
+        "zorro",
+        "skull",
+        "captain kidd",
+        "panther",
+        "carmen",
+        "fox",
+        "goemon",
+        "queen",
+        "johanna",
+        "oracle",
+        "necronomicon",
+        "noir",
+        "milady",
+        "crow",
+        "robin hood"
     ],
 
     // Random solution generator
