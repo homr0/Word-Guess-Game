@@ -1,0 +1,106 @@
+/* Customized fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed|Oswald');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Oswald', Verdana, 'Geneva', Tahoma, sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    background-image: url('../images/real_cf.png');
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans Condensed', Verdana, 'Geneva', Tahoma, sans-serif;
+}
+
+header, main, footer, .container {
+    overflow: auto;
+    clear: both;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header, footer {
+    width: 100%;
+    background-color: #7F0000;
+    color: #dedede;
+}
+
+header {
+    height: 5rem;
+    text-align: center;
+    position: fixed;
+    z-index: 10;
+}
+
+header .container {
+    height: 5rem;
+}
+
+header h1 {
+    display: inline-block;
+}
+
+header img {
+    max-height: 3rem;
+    width: auto;
+    padding: 1rem 0 1rem;
+    position: absolute;
+}
+
+header img:first-of-type {
+    left: 0;
+}
+
+header img:last-of-type {
+    right: 0;
+}
+
+main {
+    height: calc(100vh - 4rem);
+}
+
+main .container {
+    background-color: #ffffff;
+    margin: 6rem auto 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-flow: wrap row-reverse;
+}
+
+#game {
+    text-align: center;
+}
+
+#win, #word, #attempt {
+    display: block;
+}
+
+footer {
+    height: 4rem;
+    text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+    .container {
+        width: 100%;
+    }
+
+    main .container {
+        width: calc(100% - 4rem);
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header {
+        position: static;
+    }
+}

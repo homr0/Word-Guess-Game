@@ -5,21 +5,46 @@
         <title>Word Guess Game</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
 
     <body>
-        <h1>Word Guessing Game</h1>
+        <header>
+            <div class="container">
+                <img src="assets/images/header-jack-frost.png" alt="Jack Frost">
 
-        <p>Press any key to get started!</p>
+                <h1>Persona 5 Hangman</h1>
+                
+                <img src="assets/images/header-morgana.png" alt="Morgana">
+            </div>
+        </header>
 
-        <p>Wins: <span id="win">0</span></p>
+        <main>
+            <div class="container">
+                <section id="game">
+                    <p>Press any key to get started!</p>
 
-        <p>Current Word <span id="word"></span></p>
+                    <p>Wins: <span id="win">0</span></p>
+            
+                    <p>Current Word <span id="word"></span></p>
+            
+                    <p>Number of Guesses Remaining: <span id="guess">0</span></p>
+            
+                    <p>Letters Already Guessed: <span id="attempt"></span></p>
+                </section>
+                
+                <div id="hangman">
+                    <img src="assets/images/P5_Hanged-Man_Arcana.png" alt="Hanged Man Arcana">
+                </div>
+            </div>
+        </main>
 
-        <p>Number of Guesses Remaining: <span id="guess">0</span></p>
-
-        <p>Letters Already Guessed: <span id="attempt"></span></p>
+        <footer>
+            <div class="container">
+                <p>Copyright &copy;</p>
+            </div> 
+        </footer>
 
         <script src="assets/javascript/game.js"></script>
     </body>
