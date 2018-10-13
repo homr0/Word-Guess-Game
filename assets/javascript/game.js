@@ -7,7 +7,6 @@ var game = {
         'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
     ],
     words: [
-        /*"eagle",
         "sperel",
         "superman",
         "comic",
@@ -16,9 +15,9 @@ var game = {
         "lamp",
         "laptop",
         "desktop",
-        "gundam",*/
+        "gundam",
         "bald eagle",
-        //"worm",
+        "worm",
         "keyboard"
     ],
 
@@ -29,7 +28,6 @@ var game = {
 
     // Gameplay elements
     wins: 0,
-    played: 1,
     attempts: [],
     guesses: 0,
     winner: "",
@@ -57,22 +55,55 @@ var game = {
         }
 
         // Puts the text on to the page
-        document.getElementById("word").innerHTML = this.current.join(" ");;
+        document.getElementById("word").innerHTML = this.current.join(" ");
         document.getElementById("guess").innerHTML = this.guesses;
         document.getElementById("attempt").innerHTML = this.attempts;
     },
 
     // Allows for gameplay
     play: function(guess) {
-        // Checks if the guess is a letter.
-        if(this.letters.indexOf(guess) >= 0) {
+        // Checks if the guess is a letter and if letter has been used.
+        if((this.letters.indexOf(guess) >= 0) && (this.attempts.indexOf(guess) < 0)) {
+            // Adds letter to list of attempts
+            this.attempts.push(guess);
+            document.getElementById("attempt").innerHTML = this.attempts.join(" ").toUpperCase();
 
+            // Checks if guess is in the word
+            if(this.winner.indexOf(guess) >= 0) {
+                // Puts the currently guessed letter into the corresponding blank
+                for(var i = this.winner.indexOf(guess); i < this.winner.length; i++) {
+                    if(this.winner[i] == guess) {
+                        this.current[i] = guess;
+                    }
+                }
+
+                document.getElementById("word").innerHTML = this.current.join(" "); 
+
+                // If there are no more blanks, then the player wins and game resets
+                if(this.current.indexOf("_") < 0) {
+                    this.wins++;
+                    document.getElementById("win").innerHTML = this.wins;
+
+                    this.setup();
+                }
+            }
+            else {
+                // Subtracts a guess and updates the screen;
+                this.guesses--;
+                document.getElementById("guess").innerHTML = this.guesses;
+
+                // If the guesses is 0, then the game resets.
+                if(this.guesses == 0) {
+                    this.setup();
+                }
+            }
         }
     }
 }
 
 // Starts the game
 game.setup();
+
 document.addEventListener("keydown", function(event) {
     game.play(event.key.toLowerCase());
 });
