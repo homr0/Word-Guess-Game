@@ -17,15 +17,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans Condensed', Verdana, 'Geneva', Tahoma, sans-serif;
 }
 
-header, main, footer, .container {
-    overflow: auto;
-    clear: both;
-}
-
 .container {
     max-width: 960px;
     margin: 0 auto;
     position: relative;
+    overflow: auto;
+    clear: both;
 }
 
 header, footer {
@@ -39,6 +36,7 @@ header {
     text-align: center;
     position: fixed;
     z-index: 10;
+    top: 0;
 }
 
 header .container {
@@ -65,7 +63,7 @@ header img:last-of-type {
 }
 
 main {
-    height: calc(100vh - 4rem);
+    min-height: calc(100vh - 11rem);
 }
 
 main .container {
@@ -76,12 +74,20 @@ main .container {
     flex-flow: wrap row-reverse;
 }
 
-#game {
+#game, #solution {
     text-align: center;
+}
+
+#game {
+    width: 25%;
 }
 
 #win, #word, #attempt {
     display: block;
+}
+
+#solution {
+    width: 50%;
 }
 
 footer {
@@ -102,5 +108,9 @@ footer {
 @media screen and (max-width: 640px) {
     header {
         position: static;
+    }
+
+    main .container {
+        margin-top: 1rem;
     }
 }
