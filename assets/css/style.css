@@ -127,4 +127,8 @@ footer {
     #answer {
         width: 100%;
     }
+
+    #solution {
+        max-width: calc(325px - 1rem);
+    }
 }
