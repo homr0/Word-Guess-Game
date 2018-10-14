@@ -95,9 +95,9 @@ main .container {
 }
 
 #solution {
-    max-width: 300px;
+    max-width: 325px;
     height: auto;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 footer {
