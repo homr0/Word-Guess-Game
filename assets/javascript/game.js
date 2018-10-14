@@ -29,7 +29,7 @@ var game = {
         },
 
         {
-            word: "Captain kidd",
+            word: "Captain Kidd",
             image: "captain_kidd.png"
         },
 
@@ -98,16 +98,24 @@ var game = {
     wins: 0,
     attempts: [],
     guesses: 0,
-    winner: 0,
+    winner: -1,
     current: [],
 
     // Sets up the game
     setup: function() {
-        // Resets the solution, guesses, and attempts
-        let mystery = this.mystery;
-        this.winner = Math.floor(Math.random() * mystery.length);
+        // Resets the guesses, attempts, and solution
         this.guesses = this.totalGuess;
         this.attempts = [];
+
+        // Makes sure that the next solution isn't the same as the previous one
+        let mystery = this.mystery;
+        let runnerUp = this.winner;
+        
+        while(this.winner == runnerUp) {
+            runnerUp = Math.floor(Math.random() * mystery.length);
+        }
+
+        this.winner = runnerUp;
         
         // Creates the blanks for the word
         this.current = [];
