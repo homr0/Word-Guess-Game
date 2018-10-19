@@ -1,3 +1,7 @@
+// Creates the audio element for playing the victory music
+var audioWin = document.createElement("audio");
+audioWin.setAttribute("src", "assets/triumph.mp3");
+
 // Word guess game object
 var game = {
     // Game constants
@@ -169,6 +173,10 @@ var game = {
                     image.src = "assets/images/" + this.mystery[this.winner].image;
                     image.alt = this.mystery[this.winner].word;
 
+                    // Plays the winning music.
+                    audioWin.load();
+                    audioWin.play();
+
                     this.setup();
                 }
             }
@@ -190,6 +198,9 @@ var game = {
 game.setup();
 
 document.addEventListener("keydown", function(event) {
+    // Turns off the music if it's still playing.
+    audioWin.pause();
+
     // Checks if input is a letter.
     if(event.key.match(/^[a-zA-Z]+$/)) {
         game.play(event.key.toLowerCase());
