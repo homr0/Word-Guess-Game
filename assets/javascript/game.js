@@ -202,7 +202,7 @@ document.addEventListener("keydown", function(event) {
     audioWin.pause();
 
     // Checks if input is a letter.
-    if(event.key.match(/^[a-zA-Z]+$/)) {
+    if(event.key.match(/^[a-zA-Z]$/)) {
         game.play(event.key.toLowerCase());
     }
 });
